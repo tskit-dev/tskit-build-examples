@@ -1,0 +1,6 @@
+[submodule "meson/subprojects/git-submodules/kastore"]
+	path = meson/subprojects/git-submodules/kastore
+	url = https://github.com/tskit-dev/kastore.git
+[submodule "meson/subprojects/git-submodules/tskit"]
+	path = meson/subprojects/git-submodules/tskit
+	url = https://github.com/tskit-dev/tskit.git
