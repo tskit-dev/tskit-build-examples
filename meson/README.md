@@ -94,5 +94,3 @@ Finally, we can then run the example program:
 ```
 $ ./build/example
 ```
-
-
