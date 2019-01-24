@@ -18,6 +18,8 @@ tskit_%.o: tskit
 
 kastore:
 	git clone https://github.com/tskit-dev/kastore.git
+	# NB!!! Make sure to checkout at a version tag!
+	cd kastore && git checkout C_1.0.1
 
 tskit: 
 	git clone https://github.com/tskit-dev/tskit.git
@@ -27,4 +29,3 @@ clean:
 
 mrproper: clean
 	rm -fr tskit kastore example example.trees
-
