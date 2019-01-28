@@ -15,7 +15,11 @@ $ cd subprojects/git-submodules/kastore/
 $ git checkout C_1.0.1
 $ cd ..
 $ git commit -a -m "Checked out kastore at release 1.0.1."
-# TODO also check out release for tskit.
+$ cd tskit
+$ git checkout C_0.99.1
+$ cd ..
+$ git commit -a -m "Checked out tskit at release 1.0.1."
+
 ```
 
 Returning to the project root (where the ``meson.build`` file is) we then see
