@@ -9,7 +9,7 @@ build times when using the default [ninja backend](https://ninja-build.org).
 One of the features of Meson is the ability to specify dependencies via
 [subprojects](https://mesonbuild.com/Subprojects.html), which make compiling
 local versions of a particular library very easy. Tskit uses Meson as 
-it's build system and supports being built as a Meson subproject.
+its build system and supports being built as a Meson subproject.
 
 This example documents one way in which this can be set up using 
 [Git submodules](https://git-scm.com/book/en/v2/Git-Tools-Submodules)
