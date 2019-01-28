@@ -1,4 +1,4 @@
-# Building tskit with Meson
+# Building with Meson
 
 The [meson build system](https://mesonbuild.com) is a very powerful and 
 convenient way to build C/C++ applications in a platform independent manner.
