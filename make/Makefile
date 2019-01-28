@@ -23,6 +23,8 @@ kastore:
 
 tskit: 
 	git clone https://github.com/tskit-dev/tskit.git
+	# NB!!! Make sure to checkout at a version tag!
+	cd tskit && git checkout C_0.99.1
 
 clean:
 	rm -f *.a *.o
