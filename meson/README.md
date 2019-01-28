@@ -1,3 +1,29 @@
+# Building tskit with Meson
+
+The [meson build system](https://mesonbuild.com) is a very powerful and 
+convenient way to build C/C++ applications in a platform independent manner.
+It is used by a [growing list](https://mesonbuild.com/Users.html) of large 
+open-source projects: one of the key advantages of meson is very fast incremental
+build times when using the default [ninja backend](https://ninja-build.org).
+
+One of the features of Meson is the ability to specify dependencies via
+[subprojects](https://mesonbuild.com/Subprojects.html), which make compiling
+local versions of a particular library very easy. Tskit uses Meson as 
+it's build system and supports being built as a Meson subproject.
+
+This example documents one way in which this can be set up using 
+[Git submodules](https://git-scm.com/book/en/v2/Git-Tools-Submodules)
+and soft-links.
+
+## Trying out this example
+
+If you want to try out the example in this repo without setting up your own,
+you need to clone a copy to your local machine and run ``meson build`` in this 
+directory.
+
+To ensure that the git submodules are correctly initialised, you need to 
+either run ``git clone git@github.com:tskit-dev/tskit-build-examples.git --recurse-submodules``
+or ``git submodule update --init --recursive`` if you have already cloned the repo.
 
 ## Setting up the meson sub-projects
 
@@ -18,7 +44,7 @@ $ git commit -a -m "Checked out kastore at release 1.0.1."
 $ cd tskit
 $ git checkout C_0.99.1
 $ cd ..
-$ git commit -a -m "Checked out tskit at release 1.0.1."
+$ git commit -a -m "Checked out tskit at release 0.99.1"
 
 ```
 
