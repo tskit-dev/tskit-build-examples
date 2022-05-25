@@ -1,33 +1,28 @@
 
 TSK_OBJECTS=kastore.o tskit_tables.o tskit_core.o tskit_trees.o \
 	tskit_stats.o tskit_genotypes.o tskit_convert.o
-CFLAGS += -Ikastore/c -I tskit/c
+CFLAGS += -Itskit/subprojects/kastore -Itskit
 
 # The example program.
 example: example.c libtskit.a
-	${CC} ${CFLAGS} $^ -o $@
+	${CC} ${CFLAGS} $^ -o $@ -lm
 
 libtskit.a: ${TSK_OBJECTS}
 	${AR} rcs $@ ${TSK_OBJECTS} 
 
-kastore.o: kastore
-	${CC} -c ${CFLAGS} kastore/c/kastore.c -o kastore.o
+kastore.o: tskit
+	${CC} -c ${CFLAGS} tskit/subprojects/kastore/kastore.c -o kastore.o
 
 tskit_%.o: tskit
-	${CC} -c ${CFLAGS} tskit/c/tskit/$*.c -o $@
-
-kastore:
-	git clone https://github.com/tskit-dev/kastore.git
-	# NB!!! Make sure to checkout at a version tag!
-	cd kastore && git checkout C_1.0.1
+	${CC} -c ${CFLAGS} tskit/tskit/$*.c -o $@
 
 tskit: 
-	git clone https://github.com/tskit-dev/tskit.git
-	# NB!!! Make sure to checkout at a version tag!
-	cd tskit && git checkout C_0.99.1
+	mkdir tskit
+	cd tskit && wget https://github.com/tskit-dev/tskit/releases/download/C_1.0.0/tskit-1.0.0.tar.xz
+	cd tskit && tar xvf tskit-1.0.0.tar.xz --strip-components=1
 
 clean:
 	rm -f *.a *.o
 
 mrproper: clean
-	rm -fr tskit kastore example example.trees
+	rm -fr tskit example example.trees

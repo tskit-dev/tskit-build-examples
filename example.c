@@ -53,13 +53,13 @@ int main()
     check_tsk_error(ret);
 
     /* Add edges */
-    ret = tsk_edge_table_add_row(&tables.edges, 0, 1, 3, 0);
+    ret = tsk_edge_table_add_row(&tables.edges, 0, 1, 3, 0, NULL, 0);
     check_tsk_error(ret);
-    ret = tsk_edge_table_add_row(&tables.edges, 0, 1, 4, 3);
+    ret = tsk_edge_table_add_row(&tables.edges, 0, 1, 4, 3, NULL, 0);
     check_tsk_error(ret);
-    ret = tsk_edge_table_add_row(&tables.edges, 0, 1, 3, 1);
+    ret = tsk_edge_table_add_row(&tables.edges, 0, 1, 3, 1, NULL, 0);
     check_tsk_error(ret);
-    ret = tsk_edge_table_add_row(&tables.edges, 0, 1, 4, 2);
+    ret = tsk_edge_table_add_row(&tables.edges, 0, 1, 4, 2, NULL, 0);
 
     /* Edges must be sorted in a specific order for efficiency. Sort the
      * tables to make sure that this requirement is fulfilled. */
